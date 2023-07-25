@@ -3,22 +3,22 @@
 <img src="https://cdn.discordapp.com/attachments/696204356650926092/1128012453360435272/fe3dcdee-4847-463b-8237-37354e3496a1.png" alt="Alt Text" width="600" height="250">
 
 ## Things to do: 
-- [ ] Add the last tracer survey from last spring (2023) - *Nicole*
-- [ ] Add the first tracer survey from this summer - *Korvin*
-- [ ] Identify and quantify how many particles were lost/burried/not found during the summer - *Korvin and Nicole* 
+- [x] Add the last tracer survey from last spring (2023) - *Nicole*
+- [x] Add the first tracer survey from this summer - *Nicole*
+- [x] Identify and quantify how many particles were lost/burried/not found during the summer - *Nicole* 
       
       Once we both add the csv listings of both surveys, we need to know what particle ID's were lost
       We then will look into what size class they correspond to and see how many of what size class were lost
       It would also be useful to quantify the percentage of the total amount and each size class difference as well
       This should be done by each patch of particles
 
-- [ ] Measure the B axis of the retrieved rocks from the site (separate by each size class) - *Korvin and Nicole*
+- [x] Measure the B axis of the retrieved rocks from the site (separate by each size class) - *Korvin*
 
-      We don't have a gravelometer, so will have to do by hand.
+      We don't have a gravelometer, so will have to do by hand. Take 3 measurements and average them out
       
-- [ ] Get colored spray paint, acrylic and a brush (at metzgers I guess?) and paint each particle with it's respective size class - *Korvin and Nicole*
-- [ ] Will paint on new ID's and add them to the list of tracers - *Korvin and Nicole*
-- [ ] Add these to the stream and record their locations - *Korvin and Nicole*
+- [x] Get colored spray paint, acrylic and a brush (at metzgers I guess?) and paint each particle with it's respective size class - *Korvin and Nicole*
+- [x] Will paint on new ID's and add them to the list of tracers - *Nicole*
+- [x] Add these to the stream and record their locations - *Korvin and Nicole*
 
 #### Once all these are done and we have a bit more down time, these are the following tasks:
 - [ ] Triangulate all particles from this summer survey - *Korvin and Nicole*
