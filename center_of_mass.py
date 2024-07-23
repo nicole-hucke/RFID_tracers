@@ -67,8 +67,8 @@ def get_circle_closest(x1, y1, r1, x2, y2, r2):
 
         tempCalc1 = np.array([[p1_x, p1_y],
                             [p2_x, p2_y]])
-        return tempCalc1
-    
+    return tempCalc1
+
 # Function to build a polygon
 def get_polygon(rep_points12, rep_points13, rep_points23, intersect_bool12, intersect_bool13, intersect_bool23):
     # Calculating distances between representative points
@@ -205,6 +205,20 @@ ref_points = np.array([[475291.97, 539901.968], # 6
 ref_to_rock = np.array([2.3,
                         1.65,
                         1.92]) # 105
+# Estimating rock position
+CM, rep_points, confidence_radius, polygon = get_rock_coordinates(ref_points, ref_to_rock)
+plot3circles(ref_points, ref_to_rock, rep_points=rep_points, polygon=polygon, CM=CM, confidence=confidence_radius)
+print("Rock position: ", CM)
+
+####### BAD EXAMPLE - NO INTERSECTION #######
+# Defining xyz coordinates fo the reference points
+ref_points = np.array([[475234.816, 539959.693], # 20
+                        [475236.501, 539958.827], # 21
+                        [475236.686, 539960.687]]) # 22
+# Distances from reference points to rock X
+ref_to_rock = np.array([0.75,
+                        1.49,
+                        1.35]) # 2
 # Estimating rock position
 CM, rep_points, confidence_radius, polygon = get_rock_coordinates(ref_points, ref_to_rock)
 plot3circles(ref_points, ref_to_rock, rep_points=rep_points, polygon=polygon, CM=CM, confidence=confidence_radius)
