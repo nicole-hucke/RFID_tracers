@@ -1,7 +1,7 @@
 
 
 ###############################################################
-# Importing libraries
+# importing libraries
 import math
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, Polygon
@@ -10,7 +10,7 @@ import pandas as pd
 import os
 
 ################################################################
-# Defining some functions
+# defining some functions
 
 # def do_they_intersect
 def do_they_intersect(x1, y1, r1, x2, y2, r2):
@@ -25,15 +25,15 @@ def do_they_intersect(x1, y1, r1, x2, y2, r2):
 
 # def get_intersection_area
 def get_intersection_area(center1, radius1, center2, radius2):
-    d = math.dist(center1, center2)  # Distance between centers
-    # Check if the circles do not overlap
+    d = math.dist(center1, center2)  # distance between centers
+    # check if the circles do not overlap
     if d >= (radius1 + radius2):
         return 0.0
-    # Check if one circle is completely inside the other
+    # check if one circle is completely inside the other
     if d <= abs(radius1 - radius2):
         return math.pi * min(radius1, radius2)**2
     
-    # Calculate the area of intersection
+    # calculate the area of intersection
     r1_sq = radius1**2
     r2_sq = radius2**2
     alpha = math.acos((r1_sq + d**2 - r2_sq) / (2 * radius1 * d)) * 2
@@ -69,16 +69,16 @@ def plot_two_circles(center1, radius1, center2, radius2, save_results_to=None):
         plt.savefig(save_results_to, dpi=300)
     plt.show()
 
-# Defining the main function
+# defining the main function
 def get_rock_displacement(location1, location2, radius1, radius2):
-    # Calculating the distance betweeen both
+    # calculating the distance betweeen both
     distance = np.sqrt(np.sum((location1 - location2)**2))
     
-    # Checking intersection
+    # checking intersection
     intersect = do_they_intersect(location1[0], location1[1], radius1,
                                   location2[0], location2[1], radius2)
 
-    # Calculations depending on whether circles intersect or not
+    # calculations depending on whether circles intersect or not
     if intersect == True:
         tempCalc1 = distance + (radius1 + radius2)
         maxD = tempCalc1
@@ -101,14 +101,14 @@ def get_rock_displacement(location1, location2, radius1, radius2):
     return distance, intersect, maxD, minD, intersection_area, ratio_minA, ratio_maxA
 
 #################################################################
-# Performing the analysis
+# performing the analysis
 
-# Checking environment and working directory
+# checking environment and working directory
 os.getcwd()
-working_directory = "C:/Users/bern9483/Documents/Nicole/tracers_data/"
+working_directory = "C:/Users/nicol/GitHub/RFID_tracers/particle_displacement/"
 os.chdir(working_directory)
 
-# Filenames and directories
+# filenames and directories
 filename1 = "./triangulated_tracer_survey_03_28_2022.csv"
 filename2 = "./triangulated_tracer_survey_07_06_2022.csv"
 filename3 = "./triangulated_tracer_survey_08_06_2022.csv"
@@ -121,7 +121,7 @@ filename9 = "./triangulated_tracer_survey_09_20_2023.csv"
 results_directory = "./results/"
 dates = ["03_28_2022", "07_06_2022", "08_06_2022", "08_09_2022", "08_24_22", "03_24_2023", "06_17_2023", "07_31_2023", "09_20_2023"]
 
-# Reading files
+# reading files
 dataframe1 = pd.read_csv(filename1)
 dataframe2 = pd.read_csv(filename2)
 dataframe3 = pd.read_csv(filename3)
@@ -132,7 +132,7 @@ dataframe7 = pd.read_csv(filename7)
 dataframe8 = pd.read_csv(filename8)
 dataframe9 = pd.read_csv(filename9)
 
-# Changing the indices
+# changing the indices
 dataframe1.index = dataframe1["ParticleID"].astype(np.int64)
 dataframe2.index = dataframe2["ParticleID"].astype(np.int64)
 dataframe3.index = dataframe3["ParticleID"].astype(np.int64)
@@ -143,18 +143,8 @@ dataframe7.index = dataframe7["ParticleID"].astype(np.int64)
 dataframe8.index = dataframe8["ParticleID"].astype(np.int64)
 dataframe9.index = dataframe9["ParticleID"].astype(np.int64)
 
-# Dropping duplicates JUST FO RTHE EXAMPLE
-# dataframe1 = dataframe1.drop_duplicates(subset="ParticleID")
-# dataframe2 = dataframe2.drop_duplicates(subset="ParticleID")
-# dataframe3 = dataframe3.drop_duplicates(subset="ParticleID")
-# dataframe4 = dataframe4.drop_duplicates(subset="ParticleID")
-# dataframe5 = dataframe5.drop_duplicates(subset="ParticleID")
-# dataframe6 = dataframe6.drop_duplicates(subset="ParticleID")
-# dataframe7 = dataframe7.drop_duplicates(subset="ParticleID")
-# dataframe8 = dataframe8.drop_duplicates(subset="ParticleID")
-# dataframe9 = dataframe9.drop_duplicates(subset="ParticleID")
 
-# Sorting them
+# sorting them
 dataframe1 = dataframe1.sort_index()
 dataframe2 = dataframe2.sort_index()
 dataframe3 = dataframe3.sort_index()
@@ -178,7 +168,7 @@ dataframe7 = dataframe7.reindex(full_index)
 dataframe8 = dataframe8.reindex(full_index)
 dataframe9 = dataframe9.reindex(full_index)
 
-# Getting data
+# getting data
 indices = np.array(full_index)
 
 # location1 = np.column_stack((dataframe1["X"].to_numpy(), dataframe1["Y"].to_numpy()))
