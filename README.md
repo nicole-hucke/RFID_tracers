@@ -1,6 +1,5 @@
 # RFID tracer particles - La Jara Creek #
 #### This repo is where we store all the RFID tracer data during the summer 2023 field season ####
-<img src="https://cdn.discordapp.com/attachments/696204356650926092/1128012453360435272/fe3dcdee-4847-463b-8237-37354e3496a1.png" alt="Alt Text" width="600" height="250">
 
 ## Things to do: 
 - [x] Add the last tracer survey from last spring (2023) - *Nicole*
